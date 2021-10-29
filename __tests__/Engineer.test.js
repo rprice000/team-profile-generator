@@ -1,12 +1,14 @@
 const Engineer = require('../lib/Engineer');
 
 
-// test to create employee object
-test('test that creates an employee object', () => {
-    // random variable employee to test
-        const employee = new Employee('Reagan', 10000, 'rtprice21@gmail.com');
-    // Creates tests that checks if name and email are strings and id is a number
-        expect(employee.name).toEqual(expect.any(String));
-        expect(employee.id).toEqual(expect.any(Number));
-        expect(employee.email).toEqual(expect.any(String));
+// test to create engineer object
+test('test that creates an engineer object', () => {
+    // random variable engineer to test
+        const engineer = new Engineer('Reagan', 10000, 'rtprice21@gmail.com', 'rprice000');
+// Creates tests that checks if name, email, and github are strings and id is a number
+        expect(engineer.name).toEqual(expect.any(String));
+        expect(engineer.id).toEqual(expect.any(Number));
+        expect(engineer.email).toEqual(expect.any(String));
+        expect(engineer.github).toEqual(expect.any(String));
+ 
     });
