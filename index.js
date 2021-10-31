@@ -12,14 +12,44 @@ const Manager = require('./lib/Manager');
 const proiflesArray = [];
 
 
+const teamManager = () => {
+    return inquirer.prompt ([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'Who is the manager of this team?', 
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: "Please enter the manager's ID.",
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: "Please enter the manager's email.",
+        },
+        {
+            type: 'input',
+            name: 'officeNumber',
+            message: "Please enter the manager's office number",
+        }
+    ])
+    .then(managerData => {
+        const  { name, id, email, officeNumber } = managerData; 
+        const manager = new Manager (name, id, email, officeNumber);
 
-function createNewEmployee() {
+        proiflesArray.push(manager); 
+    })
+};
+
+const teamMembers = () => {
     return inquirer.prompt ([
         {
             type: 'list',
             name: 'role',
             message: "Please choose your employee's role",
-            choices: ['Engineer', 'Intern', 'Manager']
+            choices: ['Engineer', 'Intern']
         },
         {
             type: 'input',
@@ -49,37 +79,97 @@ function createNewEmployee() {
             when: (input) => input.role === "Intern",
         },
         {
-            type: 'input',
-            name: 'officeNumber',
-            message: "Please enter the manager's office number",
-            when: (input) => input.role === "Manager",
-        },
-        {
             type: 'confirm',
-            name: 'confirmAddEmployee',
+            name: 'addTeamMember',
             message: 'Would you like to add more team members?',
             default: false
         }
     ])
-    .then(userInput => {
-        let { role, name, id, email, github, school, officeNumber, confirmAddEmployee } = userInput;
-        let newEmployee;
-
+    .then(userData => {
+        let { name, id, email, role, github, school, addTeamMember } = userData; 
+        let newEmployee; 
         if (role === "Engineer") {
             newEmployee = new Engineer (name, id, email, github);
-            console.log(newEmployee);
-        }
-        else if (role === "Intern" ) {
+        } else if (role === "Intern") {
             newEmployee = new Intern (name, id, email, school);
-            console.log(newEmployee);
         }
-        else if (role === "Manager" ) {
-            newEmployee = new Manager (name, id, email, officeNumber);
-            console.log(newEmployee);
+        proiflesArray.push(newEmployee); 
+        if (addTeamMember) {
+            return teamMembers(proiflesArray); 
+        } else {
+            return proiflesArray;
         }
-    
     })
-};
+}
+
+
+// function createNewEmployee() {
+//     return inquirer.prompt ([
+//         {
+//             type: 'list',
+//             name: 'role',
+//             message: "Please choose your employee's role",
+//             choices: ['Engineer', 'Intern', 'Manager']
+//         },
+//         {
+//             type: 'input',
+//             name: 'name',
+//             message: "What's the name of the employee?", 
+//         },
+//         {
+//             type: 'input',
+//             name: 'id',
+//             message: "Please enter the employee's ID.",
+//         },
+//         {
+//             type: 'input',
+//             name: 'email',
+//             message: "Please enter the employee's email.",
+//         },
+//         {
+//             type: 'input',
+//             name: 'github',
+//             message: "Please enter the employee's github username.",
+//             when: (input) => input.role === "Engineer",
+//         },
+//         {
+//             type: 'input',
+//             name: 'school',
+//             message: "Please enter the intern's school",
+//             when: (input) => input.role === "Intern",
+//         },
+//         {
+//             type: 'input',
+//             name: 'officeNumber',
+//             message: "Please enter the manager's office number",
+//             when: (input) => input.role === "Manager",
+//         },
+//         {
+//             type: 'confirm',
+//             name: 'confirmAddEmployee',
+//             message: 'Would you like to add more team members?',
+//             default: false
+//         }
+//     ])
+//     .then(userInput => {
+//         let { role, name, id, email, github, school, officeNumber, confirmAddEmployee } = userInput;
+//         let newEmployee;
+
+//         if (role === "Engineer") {
+//             newEmployee = new Engineer (name, id, email, github);
+//             console.log(newEmployee);
+//         }
+//         else if (role === "Intern" ) {
+//             newEmployee = new Intern (name, id, email, school);
+//             console.log(newEmployee);
+//         }
+//         else if (role === "Manager" ) {
+//             newEmployee = new Manager (name, id, email, officeNumber);
+//             console.log(newEmployee);
+//         }
+    
+//     })
+// };
 
 const writeFile = answers => {
     fs.writeFile('./dist/index.html', answers, err => {
@@ -93,7 +183,8 @@ const writeFile = answers => {
     })
 };
 
-createNewEmployee()
+teamManager()
+    .then(teamMembers)
     .then(profilesHTML => {
         return writeFile(profilesHTML);
     })
