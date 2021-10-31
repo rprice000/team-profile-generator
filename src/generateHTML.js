@@ -68,7 +68,7 @@ const teamProfilePage = function (profiles) {
     <main>
       <div>
         <div>
-          ${employeeCards}
+          ${profiles}
         </div>
       </div>
     </main>
