@@ -76,6 +76,17 @@ function createNewEmployee() {
     })
 };
 
+const writeFile = answers => {
+    fs.writeFile('./dist/index.html', answers, err => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        else {
+            console.log('Team Profiles have been created on index.html.')
+        }
+    })
+};
 
 createNewEmployee();
 
