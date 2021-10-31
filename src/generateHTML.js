@@ -43,7 +43,27 @@ const createManager = function (newManager) {
   `
 };
 
-
+// place user input that ran through cards into an array on the HTML page
+generateCardData = (data) => {
+  htmlProfilesArray = [];
+  for (let i=0; i < data.length; i++) {
+    const newEmployee = data[i];
+    const employeeRole = newEmployee.getRole();
+    
+    if (employeeRole === 'Engineer') {
+      const newEngineerData = createEngineer(newEmployee);
+      htmlProfilesArray.push(newEngineerData);
+    }
+    if (employeeRole === 'Intern') {
+      const newInternData = createIntern(newEmployee);
+      htmlProfilesArray.push(newInternData);
+    }
+    if (employeeRole === 'Manager') {
+      const newManagerData = createManager(newEmployee);
+      htmlProfilesArray.push(newManagerData)
+    }
+  }
+}
 
 
 
