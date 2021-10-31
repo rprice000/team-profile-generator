@@ -88,6 +88,12 @@ const writeFile = answers => {
     })
 };
 
-createNewEmployee();
+createNewEmployee()
+    .then(profilesHTML => {
+        return writeFile(profilesHTML);
+    })
+    .catch(err => {
+        console.log(err);
+    });
 
 
