@@ -1,3 +1,4 @@
+const generateHTML = require('./src/generateHTML');
 // Node.js module packages
 const inquirer = require('inquirer');
 const fs = require('fs'); 

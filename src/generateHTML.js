@@ -63,6 +63,9 @@ generateCardData = (data) => {
       htmlProfilesArray.push(newManagerData)
     }
   }
+  const employeeProfiles = htmlProfilesArray.join('')
+  const generateNewTeam = teamProfilePage(employeeProfiles);
+  return generateNewTeam;
 }
 
 
@@ -70,7 +73,7 @@ generateCardData = (data) => {
 
 
 
-const teamProfilePage = function (profiles) {
+const teamProfilePage = function (employeeProfiles) {
   return `
 <!DOCTYPE html>
   <html lang="en">
@@ -88,7 +91,7 @@ const teamProfilePage = function (profiles) {
     <main>
       <div>
         <div>
-          ${profiles}
+          ${employeeProfiles}
         </div>
       </div>
     </main>
@@ -97,4 +100,4 @@ const teamProfilePage = function (profiles) {
 `;
 }
 
-module.exports = generateHTML; 
+module.exports = generateCardData;
