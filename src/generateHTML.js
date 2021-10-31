@@ -17,13 +17,13 @@ const createEngineer = function (newEngineer) {
 const createIntern = function (newIntern) {
   return `
   <div>
-    <h3>${intern.name}</h3>
+    <h3>${newIntern.name}</h3>
     <h4>Intern</h4>
   </div>
   <div>
-    <p>ID: ${intern.id}</p>
-    <p>Email: ${intern.email}</p>
-    <p>School: ${intern.school}</p>
+    <p>ID: ${newIntern.id}</p>
+    <p>Email: ${newIntern.email}</p>
+    <p>School: ${newIntern.school}</p>
   </div>
   `
 };
@@ -32,13 +32,13 @@ const createIntern = function (newIntern) {
 const createManager = function (newManager) {
   return `
   <div>
-    <h3>${manager.name}</h3>
+    <h3>${newManager.name}</h3>
     <h4>Manager</h4>
   </div>
   <div>
-    <p>ID: ${manager.id}</p>
-    <p>Email: ${manager.email}</p>
-    <p>Office Number: ${manager.officeNumber}</p>
+    <p>ID: ${newManager.id}</p>
+    <p>Email: ${newManager.email}</p>
+    <p>Office Number: ${newManager.officeNumber}</p>
   </div>
   `
 };
