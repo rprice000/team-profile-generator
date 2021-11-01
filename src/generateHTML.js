@@ -57,25 +57,36 @@ const createManager = function (newManager) {
 
 // place user input that ran through cards into an array on the HTML page
 generateCardData = (data) => {
+// creates profile array of user input that will be displayed on the HTML page
   htmlProfilesArray = [];
+// for loop to run through each user input
   for (let i=0; i < data.length; i++) {
+// creates new employee variable based on the number of employee objects created
     const newEmployee = data[i];
+// creates employee role variable based upon the role assigned to the new employee object
     const employeeRole = newEmployee.getRole();
-    
+// If new employee is an engineer; takes user data to create new engineer data variable    
     if (employeeRole === 'Engineer') {
       const newEngineerData = createEngineer(newEmployee);
+// Pushes engineer data to html profile array
       htmlProfilesArray.push(newEngineerData);
     }
+// If new employee is an intern; takes user data to create new eintern data variable  
     if (employeeRole === 'Intern') {
       const newInternData = createIntern(newEmployee);
+// Pushes intern data to html profile array
       htmlProfilesArray.push(newInternData);
     }
+// If new employee is an manager; takes user data to create new manager data variable  
     if (employeeRole === 'Manager') {
       const newManagerData = createManager(newEmployee);
+// Pushes manager data to html profile array
       htmlProfilesArray.push(newManagerData)
     }
   }
+// Joins all profiles into one employee profiles variable
   const employeeProfiles = htmlProfilesArray.join('')
+// creates variable that equals the parameters in teamProfilePage function
   const generateNewTeam = teamProfilePage(employeeProfiles);
   return generateNewTeam;
 }
@@ -84,7 +95,7 @@ generateCardData = (data) => {
 
 
 
-
+// Generates the HTML code to be displayed on index.html
 const teamProfilePage = function (employeeProfiles) {
   return `
 <!DOCTYPE html>
