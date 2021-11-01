@@ -18,3 +18,7 @@ h1 {
     flex-wrap: wrap;
 }
 
+.card {
+    box-shadow: 10px 5px 5px rgb(29, 28, 28);
+}
+

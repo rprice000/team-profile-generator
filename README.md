@@ -25,6 +25,7 @@ This application allows users to generate team profiles to a HTML page through t
 # Technologies
 - HTML5
 - CSS3
+- Bulma Styling
 - Javascript
 - Node
 - Inquirer
@@ -39,6 +40,10 @@ To generate profiles run: node index
 
 - GitHub Repository Link
 https://github.com/rprice000/team-profile-generator
+
+- Screencastify Link
+https://drive.google.com/file/d/17kl7uk9lSTh_lHDEdSSvYl0TGpb0dIAj/view
+
 
 # Version
 

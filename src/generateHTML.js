@@ -3,17 +3,15 @@ const createEngineer = function (newEngineer) {
   return `
   <div class="column is-one-quarter">
     <div class="card">
-      <div class="card-content">
-        <div class="cardTitle is-size-3 p-3">
-          <h3>${newEngineer.name}</h3>
-          <h4>Engineer</h4>
-        </div>
-        <div class="cardData is-size-5 p-3">
-          <p>ID: ${newEngineer.id}</p>
-          <p>Email: <a href="${newEngineer.email}">${newEngineer.email}</a></p>
-          <p>Github: <a href="${newEngineer.github}">${newEngineer.github}</a></p>
-        </div>
-      </div>
+          <div class="cardTitle is-size-3 p-3">
+            <h3>${newEngineer.name}</h3>
+            <h4>Engineer</h4>
+          </div>
+          <div class="cardData is-size-5 p-3">
+            <p>ID: ${newEngineer.id}</p>
+            <p>Email: <a href="${newEngineer.email}">${newEngineer.email}</a></p>
+            <p>Github: <a href="${newEngineer.github}">${newEngineer.github}</a></p>
+          </div>
     </div>
   </div>
   `
@@ -24,17 +22,15 @@ const createIntern = function (newIntern) {
   return `
   <div class="column is-one-quarter">
     <div class="card">
-      <div class="card-content">
-        <div class="cardTitle is-size-3 p-3">
-          <h3>${newIntern.name}</h3>
-          <h4>Intern</h4>
-        </div>
-        <div class="cardData is-size-5 p-3">
-          <p>ID: ${newIntern.id}</p>
-          <p>Email: <a href="${newIntern.email}">${newIntern.email}</a></p>
-          <p>School: ${newIntern.school}</p>
-        </div>
-      </div>
+          <div class="cardTitle is-size-3 p-3">
+            <h3>${newIntern.name}</h3>
+            <h4>Intern</h4>
+          </div>
+          <div class="cardData is-size-5 p-3">
+            <p>ID: ${newIntern.id}</p>
+            <p>Email: <a href="${newIntern.email}">${newIntern.email}</a></p>
+            <p>School: ${newIntern.school}</p>
+          </div>
     </div>
   </div>
   `
@@ -45,17 +41,15 @@ const createManager = function (newManager) {
   return `
   <div class="column is-one-quarter">
     <div class="card">
-      <div class="card-content">
-        <div class="cardTitle is-size-3 p-3">
-          <h3>${newManager.name}</h3>
-          <h4>Manager</h4>
-        </div>
-        <div class="cardData is-size-5 p-3">
-          <p>ID: ${newManager.id}</p>
-          <p>Email: <a href="${newManager.email}">${newManager.email}</a></p>
-          <p>Office Number: ${newManager.officeNumber}</p>
-        </div>
-      </div>
+          <div class="cardTitle is-size-3 p-3">
+            <h3>${newManager.name}</h3>
+            <h4>Manager</h4>
+          </div>
+          <div class="cardData is-size-5 p-3">
+            <p>ID: ${newManager.id}</p>
+            <p>Email: <a href="${newManager.email}">${newManager.email}</a></p>
+            <p>Office Number: ${newManager.officeNumber}</p>
+          </div>
     </div>
   </div>
   `
