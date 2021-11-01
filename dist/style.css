@@ -15,4 +15,6 @@ h1 {
 
 .profileHolder {
     justify-content: center;
+    flex-wrap: wrap;
 }
+

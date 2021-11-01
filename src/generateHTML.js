@@ -109,11 +109,15 @@ const teamProfilePage = function (employeeProfiles) {
       </nav>
     </header>
     <main>
-      <div>
-        <div class="profileHolder columns">
-          ${employeeProfiles}
+      <section class="section">
+        <div class="container">
+          <div>
+            <div class="profileHolder columns">
+              ${employeeProfiles}
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
     </main>
   </body>
   </html>
