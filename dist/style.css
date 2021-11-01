@@ -1,0 +1,18 @@
+h1 {
+    text-align: center;
+    background-color: rgb(240, 75, 75);
+    color: white;
+}
+
+.cardTitle {
+    background-color: rgb(47, 70, 201);
+    color: white;
+}
+
+.cardData {
+    background-color: rgb(180, 178, 178);
+}
+
+.profileHolder {
+    justify-content: center;
+}

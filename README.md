@@ -8,6 +8,8 @@
 
 This application allows users to generate team profiles to a HTML page through the command line.  By creating employee class and generic HTML users will save type by only having to type in the command line basic employee information.  All HTML and styling are generated automatically.
 
+# Table of Contents
+
 
 # Installation
 
